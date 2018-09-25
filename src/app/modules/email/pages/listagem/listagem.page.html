@@ -1,0 +1,24 @@
+<h1>Listagem de email</h1>
+<!-- <ul>
+<input
+    (click)="toggleCheckedEmails()"
+    type="checkbox"
+    [checked]="isEmailsChecked">
+    
+<li *ngFor="let email of emails">
+    <input type="checkbox" [checked]="email.isChecked()">
+    <a [routerLink]="['/email', email.id]">
+        {{ email.id }} - {{ email.assunto }}
+    </a>
+</li>
+</ul> -->
+
+<div class="mdl-grid mdl-grid--no-spacing">
+    <div class="mdl-cell mdl-cell--12-col">
+        <ul class="emailList mdl-list">
+
+            <email-list-item *ngFor="let email of emails" [id]="email.id"></email-list-item>
+
+        </ul>
+    </div>
+</div>

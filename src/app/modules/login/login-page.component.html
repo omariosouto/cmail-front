@@ -1,0 +1,60 @@
+<div class="mdl-grid">
+  <h1 class="mdl-cell mdl-cell--12-col">Formulário de Login</h1>
+</div>
+
+<div class="mdl-grid">
+  <form #formLogin="ngForm" (ngSubmit)="formLoginSubmitHandler(formLogin, $event)" class="cmailForm mdl-cell mdl-cell--12-col" autocomplete="off">
+
+    <cmail-form-group [formField]="emailField">
+      <input ngModel cmailInputForm #emailField="ngModel" type="email" name="email" placeholder="Email" required email />
+      <span class="mdl-textfield__error" *ngIf="formLogin.invalid && emailField.errors?.required && emailField.touched">Email
+        é obrigatório!</span>
+      <span class="mdl-textfield__error" *ngIf="formLogin.invalid && emailField.errors?.email && emailField.touched">Insira
+        um e-mail válido!</span>
+    </cmail-form-group>
+
+    <cmail-form-group [formField]="passwordField">
+      <input ngModel cmailInputForm #passwordField="ngModel" type="text" name="password" placeholder="Password"
+        required />
+      <span class="mdl-textfield__error" *ngIf="formLogin.invalid && passwordField.errors?.required && passwordField.touched">Password
+        é obrigatório!</span>
+    </cmail-form-group>
+
+    <button class="mdl-button mdl-js-button mdl-button--raised" type="submit">
+      Logar
+    </button>
+
+    <!-- 
+    
+  Directives overview
+  There are three kinds of directives in Angular:
+  
+  1 - Components—directives with a template.
+  2 - Structural directives—change the DOM layout by adding and removing DOM elements. (*ngFor, *ngIf...)(https://angular.io/guide/structural-directives)
+  3 - Attribute directives—change the appearance or behavior of an element, component, or another directive. (ngModel[adiciona altas coisas], inputForm[adiciona atributos])
+   -->
+  </form>
+
+</div>
+
+<!-- 
+
+## Template Driven
+
+1 - Criar variável local pra referenciar o formulário
+- #f="ngForm" (permite que tenhamos acesso ao form como um todo)
+
+2 - Passar ngModel com name="" para TODOS os campos filhos (precisam estar no mesmo arquivo, não pode ser componente filho)
+
+-->
+
+<!--
+  # Validações:
+    - Via Form: {{ formLogin.controls.email?.errors | json }}
+    - Associando o #email="" ao ngModel: {{ email.errors | json }}
+-->
+<!-- 
+  # Debugar na tela - Revisão de pipes: 
+  - 
+  
+ -->

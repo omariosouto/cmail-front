@@ -1,0 +1,15 @@
+<div class="page-content">
+
+
+Página interna uhul
+
+
+<a [routerLink]="['/email']">Voltar para listagem</a>
+
+<div *ngIf="email">
+    <h1>{{ email.assunto }}</h1>
+    <div>{{ email.conteudo }}</div>
+</div>
+
+
+</div>

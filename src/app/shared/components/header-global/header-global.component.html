@@ -1,0 +1,55 @@
+<header class="headerGlobal mdl-layout__header">
+    <button (click)="toggleMenu()" class="mdl-layout__drawer-button">
+        <i class="material-icons"></i>
+    </button>
+
+    <div class="mdl-layout__header-row">
+        <span class="headerGlobal__title mdl-layout-title">Título da página Atual</span>
+
+        <div class="mdl-layout-spacer"></div>
+
+        <!-- Search -->
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+          mdl-textfield--floating-label mdl-textfield--align-right is-focused mdl-cell--hide-phone ">
+            <!--Para fechar remover is-focused-->
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
+                <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+                <input class="headerSearch__input mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp"
+                    placeholder="Filtrar e-mails...">
+            </div>
+        </div>
+        <!--./Search-->
+    </div>
+</header>
+<div class="headerGlobal__menuArea mdl-layout__drawer" [ngClass]="{ 'headerGlobal__menuArea--active': isMenuOpen}">
+    <span class="mdl-layout-title">
+        <img class="headerGlobal__logo" src="assets/img/logo.svg" alt="">
+    </span>
+
+    <header class="headerGlobal__userInfo">
+        <img src="http://placehold.it/48x48" class="headerGlobal__userInfoAvatar">
+        <div class="headerGlobal__userInfoData">
+            <h5 class="headerGlobal__userInfoDataName">Fulano de Tal</h5>
+            <span>fulaninho@cmail.com.br</span>
+            <div class="mdl-layout-spacer"></div>
+        </div>
+    </header>
+
+    <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" [routerLink]="['/']">
+            <i class="material-icons">person</i> Login
+        </a>
+        <a class="mdl-navigation__link" [routerLink]="['/cadastro']">
+            <i class="material-icons">create</i> Cadastro
+        </a>
+        <a class="mdl-navigation__link" [routerLink]="['/email']">
+            <i class="material-icons">inbox</i> Caixa de Entrada
+        </a>
+        <a class="mdl-navigation__link" [routerLink]="['/logout']">
+            <i class="material-icons">logout</i> Logout
+        </a>
+    </nav>
+</div>
+<div class="headerGlobal__menuOverlay" (click)="toggleMenu()"></div>
