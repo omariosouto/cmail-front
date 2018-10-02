@@ -3,7 +3,10 @@ import { Component } from "@angular/core";
 @Component({
     selector: 'header-global',
     templateUrl: './header-global.component.html',
-    styleUrls: ['./header-global.component.css']
+    styleUrls: [
+        './header-global.component.css',
+        './header-search.css'
+    ]
 })
 export class HeaderGlobalComponent {
     private _isMenuOpen: boolean = false

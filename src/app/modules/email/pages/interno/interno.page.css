@@ -1,0 +1,13 @@
+.interno__emailCard.mdl-card {
+    width: 100%;
+    border-bottom: 1px solid #dddddd;
+}
+.interno__emailCard.mdl-card {
+    border-radius: 0;
+}
+.interno__emailCard.mdl-card:first-child {
+    border-radius: 4px 4px 0 0;
+}
+.interno__emailCard.mdl-card:last-child {
+    border-radius: 0 0 4px 4px;
+}

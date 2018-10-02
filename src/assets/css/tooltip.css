@@ -1,0 +1,45 @@
+/* [Tooltip] */
+.tooltip {
+  position: relative;
+  overflow: initial !important;
+}
+
+.tooltip:before {
+  content: attr(aria-label);
+  display: block;
+  position: absolute;
+  white-space: nowrap;
+  text-transform: capitalize;
+  border-radius: 2px;
+  line-height: 1.5em;
+  background-color: #323232;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #fff;
+  cursor: default;
+  opacity: 0;
+  transition: opacity .5s, transform .5s !important;
+  transform: translateX(-90%) translateY(-50%);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.tooltip:focus:before,
+.tooltip:hover:before {
+  opacity: 1;
+  transform: translateX(-110%) translateY(-50%);
+  pointer-events: all;
+}
+
+
+
+.tooltip--left:before {
+  transform: translateX(0%) translateY(-15%);
+}
+.tooltip--left:focus:before,
+.tooltip--left:hover:before {
+  opacity: 1;
+  transform: translateX(30%) translateY(-15%);
+  pointer-events: all;
+}

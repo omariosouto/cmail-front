@@ -5,13 +5,16 @@ import { Email } from "../../../../shared/models/Email";
 
 @Component({
     selector: 'interno',
-    templateUrl: './interno.page.html'
+    templateUrl: './interno.page.html',
+    styleUrls: [
+        './interno.page.css'
+    ]
 })
 export class InternoPage {
     emailId: string
     email: Email
 
-    @HostBinding('class') classes = 'mdl-layout__content';
+    // @HostBinding('class') classes = 'mdl-layout__content';
 
 
     constructor(private activeRoute: ActivatedRoute) {
